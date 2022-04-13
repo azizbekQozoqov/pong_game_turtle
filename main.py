@@ -1,11 +1,12 @@
 import time
 import tkinter
 import turtle
+from tkinter import messagebox
 
 # ! Configure window
 wn = turtle.Screen()
 wn.title("Pong game using turtle by www.azizbekDev.com")
-wn.bgcolor("#000000")
+wn.bgpic("./bg.gif")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 root_win = wn.cv._rootwindow or tkinter.Tk()
@@ -34,7 +35,7 @@ player_b_score = 0
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("circle")
-ball.color("#f3f3f3")
+ball.color("#ffffff")
 ball.penup()
 ball.goto(0, 0)
 ball.dx = .6
@@ -66,6 +67,8 @@ def paddle_b_down():
     y = paddle_b.ycor()
     y -= 20
     paddle_b.sety(y)
+
+print(messagebox.askyesno('Guide', "Fist paddle: 'W' and 'S' keys\n\nSecond paddle: 'Up' and 'Down' keys"))
 
 # ! keyboard binding
 wn.listen()
